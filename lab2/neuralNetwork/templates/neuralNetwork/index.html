@@ -1,0 +1,20 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Сайт с использованием нейронной сети
+{% endblock title %}
+
+{% block content %}
+<p>Определение наличия пневмонии по изображению</p>
+
+<form action="analysis/" method = "POST" class="dropzone dz" id ="myAwesomeDropzone">
+  {% csrf_token %}
+  <div class="fallback">
+    <input name="file" type="file" multiple />
+  </div>
+</form>
+<div class="container">
+  <button id="submit-all" class="res" >Get result</button>
+</div>
+<p id="result"></p>
+{% endblock content %}
